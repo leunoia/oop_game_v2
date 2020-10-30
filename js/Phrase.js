@@ -1,24 +1,26 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-const parentDiv = document.querySelector('#phrase ul')
+const parentDivUl = document.querySelector('#phrase ul')
  class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay (phrase){
-        const phraseArray = phrase.split();
-        phraseArray.forEach(phrase => {
-            const li = document.createElement('li');
-            if (phrase !== ' '){
-            li.className = `hide letter ${phrase}`
-            li.textContent = phrase; 
-            }else {
-            li.className = `space`  
-            li.textContent = phrase;
-            }
-            parentDiv.appendChild(li);
-        })
+        const characterArray = [...phrase];
+            characterArray.forEach(character => {
+                const li = document.createElement('li');
+                if (character!== ' '){
+                li.className = `hide letter ${character}`;
+                li.textContent = character;
+                parentDivUl.appendChild(li);
+                }else {
+                li.className = 'space';
+                li.textContent = ' ';
+                parentDivUl.appendChild(li);
+                }
+                
+            })
     };
     checkLetter(input) {
        if (input === phrase){
@@ -26,8 +28,8 @@ const parentDiv = document.querySelector('#phrase ul')
        }
        return false;
     }
-    showMatchedLetter() {
-        if(input === 'phrase'){
+    showMatchedLetter(selection) {
+        if(selection === ''){
             li.className = `show letter ${phrase}`
         }
     }
