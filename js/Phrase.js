@@ -18,19 +18,20 @@ const parentDivUl = document.querySelector('#phrase ul')
                 li.className = 'space';
                 li.textContent = ' ';
                 parentDivUl.appendChild(li);
-                }
-                
+                } 
             })
     };
-    checkLetter(input) {
-       if (input === phrase){
-           return true;
-       }
-       return false;
-    }
-    showMatchedLetter(selection) {
-        if(selection === ''){
-            li.className = `show letter ${phrase}`
+    checkLetter(eventTargetText) {
+        if (this.phrase.includes(eventTargetText)){
+            return true;
+        } else{
+            return false;
         }
+    }
+    showMatchedLetter(eventTargetValue) {
+        const matchedLi = document.querySelectorAll(`.${eventTargetValue}`);
+        console.log(matchedLi);
+        matchedLi.forEach(letter => letter.className = `show letter ${eventTargetValue}`);
+        // matchedLi.className = `show letter ${eventTargetValue}`;
     }
  }

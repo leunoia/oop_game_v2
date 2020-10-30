@@ -12,11 +12,11 @@ class Game {
     startGame(){
         const startOverlay = document.querySelector('#overlay');
         startOverlay.style.display = 'none';
-        this.activePhrase = this.getRandomQuote(this.phrases);
+        const randomPhrase = this.getRandomQuote(this.phrases);
+        this.activePhrase = randomPhrase;
     }
     getRandomQuote(phrases){
         let randomIndex = Math.floor(Math.random()*4);
-        phrases[randomIndex].addPhraseToDisplay(phrases[randomIndex].phrase);
         // this.activePhrase = phrases[randomIndex].phrase;
         return phrases[randomIndex].phrase;
     }
