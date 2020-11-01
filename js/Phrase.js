@@ -30,8 +30,6 @@ const parentDivUl = document.querySelector('#phrase ul')
     }
     showMatchedLetter(eventTargetValue) {
         const matchedLi = document.querySelectorAll(`.${eventTargetValue}`);
-        console.log(matchedLi);
         matchedLi.forEach(letter => letter.className = `show letter ${eventTargetValue}`);
-        // matchedLi.className = `show letter ${eventTargetValue}`;
     }
  }
